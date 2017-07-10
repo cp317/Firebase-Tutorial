@@ -1,5 +1,5 @@
 # Firebase-Tutorial
-Download the repository, then open createbeacon.html in your browser. It will also you for data, and once you finish entering it, the beacon will be stored in our database. 
+Download the repository, then open createbeacon.html in your browser. It will ask you for data, and once you finish entering it the beacon will be stored in our database. 
 
 Then open viewbeacon.html in your browser, and it will show you all the beacons that are stored in our database, including the one you just created.
 
