@@ -6,26 +6,38 @@ main();
 // gets user input to create the beacon
 function main()
 {
-	school = prompt("Please enter your school");
-	course_code = prompt("Please enter your course code:");
-	start_time = prompt("Please enter the time you will start studying");
+	host = prompt("Please enter your name:");
+	school = prompt("Please enter your school:");
+	course = prompt("Please enter your course code:");
+	members = [];
+	tags = "0000";
 	
-	// creates a "random" id for the beacon, this is not important and will not be in the final project
-	beaconId = new Date().getTime(); 
+	// randomly generate position and start / end time for convenience
+	lat = 43.4724 + (Math.random()-0.5);
+	lng = 80.526 + (Math.random()-0.5);
+	startTime = 3 + Math.floor(Math.random() * 8) + ":00AM";
+	endTime = 1 + Math.floor(Math.random() * 8) + ":00PM";
 	
 	// passes the user data to create a beacon
-	createBeacon(beaconId, school, course_code, start_time);
+	createBeacon(school, course, startTime, endTime, host, tags, members, lat, lng);
 	
 	// updates page to show beacon was created
 	document.body.innerHTML = "beacon created successfully!";
 }
 
 // creates the beacon
-function createBeacon(beaconId, school, course_code, start_time) {
-  database.ref('/beacon/' + beaconId).set({
+// inserting using .push() means key is automatically generated
+function createBeacon(school, course, startTime, endTime, host, tags, members, lat, lng) {
+  database.ref('/beacon/').push({
     school: school,
-    course_code: course_code,
-		start_time: start_time
+    course: course,
+		startTime: startTime,
+		endTime: endTime,
+		host: host,
+		tags: tags,
+		members: members,
+		lat: lat,
+		lng: lng
   });
 }
 

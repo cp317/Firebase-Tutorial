@@ -14,7 +14,13 @@ function displayBeacon()
 		{
 			// display each of the beacons attributes on the screen
 			// b.val()[i] refers to one beacon
-			document.body.innerHTML += "<li>school: <b>" + b.val()[i].school + "</b>, course code: <b>" + b.val()[i].course_code + "</b>, start_time: <b>" + b.val()[i].start_time + "</b></li>";
+			document.body.innerHTML += "<li>host: <b>" + b.val()[i].host + 
+				"</b>, school: <b>" + b.val()[i].school + 
+				"</b>, course: <b>" + b.val()[i].course + 
+				"</b>, startTime: <b>" + b.val()[i].startTime + 
+				"</b>, endTime: <b>" + b.val()[i].endTime + 
+				"</b>, coordinates: <b>(" + b.val()[i].lat + "," +  b.val()[i].lng + ")"
+				"</b></li>";
 		}
 	});
 }
