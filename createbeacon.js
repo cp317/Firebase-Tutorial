@@ -14,7 +14,7 @@ function main()
 	
 	// randomly generate position and start / end time for convenience
 	lat = 43.4724 + (Math.random()-0.5);
-	lng = 80.526 + (Math.random()-0.5);
+	lng = -80.526 + (Math.random()-0.5);
 	startTime = 3 + Math.floor(Math.random() * 8) + ":00AM";
 	endTime = 1 + Math.floor(Math.random() * 8) + ":00PM";
 	
